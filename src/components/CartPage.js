@@ -134,13 +134,14 @@ const CartPage = ({ handleClick }) => {
       .post(`http://10.120.21.82:5000/savelaters`, item)
       .then(function (res) {
         console.log(res.data);
-        // setSaveforLater([...saveforlater, item]);
+        setSaveforLater([...saveforlater, item]);
       })
       .catch(function (err) {
         console.error(err);
       });
 
     console.log(saveforlater);
+    // setSaveforLater(res.data);
 
     handleRemove(item._id);
     axios.get(`http://10.120.21.82:5000/savelaters`).then((res) => {
